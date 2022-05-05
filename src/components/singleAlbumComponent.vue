@@ -31,7 +31,6 @@ export default {
   border-radius: 0;
   height: 100%;
   background-color: #2e3a46;
-  word-wrap: normal;
   h3 {
     color: white;
     text-transform: uppercase;
