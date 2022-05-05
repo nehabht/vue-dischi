@@ -1,18 +1,20 @@
 <template>
   <div id="app">
     <HeaderComponent />
+    <MainComponent />
   </div>
 </template>
 
 <script>
 import HeaderComponent from '@/components/HeaderComponent.vue';
+import MainComponent from '@/components/MainComponent.vue';
 
 
 export default {
   name: 'App',
   components: {
     HeaderComponent,
-
+    MainComponent
   }
 }
 </script>
@@ -26,7 +28,6 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   height: 100vh;
   color: #2c3e50;
-  overflow: auto;
 }
 
 img{
