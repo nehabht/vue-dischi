@@ -3,7 +3,7 @@
     <section v-if="!loading">
         <div class="container">
              <div class="row row-cols-1 row-cols-md-3 row-cols-lg-5">
-            <SingleAlbum :album="album" v-for="(album, index) in albums" :key="index"/>
+            <SingleAlbum :album="album" v-for="(album, index) in filteredAlbum" :key="index"/>
         </div>
       </div>
     </section>
@@ -18,6 +18,7 @@
 <script>
 import axios from "axios";
 import SingleAlbum from "@/components/singleAlbumComponent.vue";
+import state from "@/state.js";
 
 export default {
   name: "DiscListComponent",
@@ -50,6 +51,14 @@ export default {
   mounted() {
     this.callApi();
   },
+  computed: {
+    filteredAlbum(){
+      return this.albums.filter(disc =>{
+        return disc.genre.toLowerCase().includes(state.selectGenre.toLowerCase())
+      })
+    }
+  }
 };
+
 </script>
 
